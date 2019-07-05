@@ -25,7 +25,7 @@ foreach ($str as $key => $value) {
 
     $word = explode(" ", $tweet);//On explose notre string en prenant comme delimiter l'espace et ça nous sort un tableau
     $i=5;
-    $words = $word[$i] . " "; /* On écrit le contenu que l'on veut (\r\n c'est CRLF) ecrire a la fin */
+    $words = $word[$i] . " ";
     fputs($compteur, $words); // fonction permet l'ecriture
     fclose($compteur);// on ferme le fichier
     $i--;
