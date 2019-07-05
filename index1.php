@@ -45,26 +45,12 @@
             ->setPostfields($postfields)
             ->performRequest(),true);
 
-    $compteur = fopen('php/newtaille.txt', 'r+'); // on ouvre le fichier
-    $nbtweet = $nbtweet + 1;
 
-    fseek($compteur, 0);//permet de reecrire sur le fichier
-    fputs($compteur, $taille); // fonction permet l'ecriture
-    fclose($compteur);// on ferme le fichier
-
-    $comptweetLecture = fopen('php/newtaille.txt', 'r+'); /* ouvre le fichier comptuer.txt en mode r+ et range le dans la variable $compteur */
-
-
-    fclose($comptweetLecture); // ferme la variable $compteur qui est défini au début
-
+    file_put_contents("php/newtaille.txt",@file_get_contents("php/newtaille.txt")+40);
 
     $newtailleLecture = fopen('php/newtaille.txt', 'r+'); /* ouvre le fichier comptuer.txt en mode r+ et range le dans la variable $compteur */
     $newtaille = fgets($newtailleLecture); // lis les lignes du fichier()
-    $newtaille+=150;
-    echo $newtaille;
-
     fclose($newtailleLecture);
-
     ?>
 
     <script>
