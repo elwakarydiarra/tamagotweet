@@ -2,10 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebae0cbf-0c85-4fc6-93b3-28c8be4c629b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/tamagotweet.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comptweet.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/modal.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/test" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index1.php" beforeDir="false" afterPath="$PROJECT_DIR$/index1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/modal.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/monstre.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modal.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/newtaille.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/comptweet.txt" beforeDir="false" afterPath="$PROJECT_DIR$/php/comptweet.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/newtaille.txt" beforeDir="false" afterPath="$PROJECT_DIR$/php/newtaille.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/tweet.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/vomi.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,29 +35,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/php/tweet.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="63" lean-forward="true" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="63" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index1.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="70" selection-start-line="70" selection-end-line="70" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/modal.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="34" selection-end-column="1" />
+            <state relative-caret-position="66">
+              <caret line="65" selection-start-line="65" selection-end-line="65" />
             </state>
           </provider>
         </entry>
@@ -56,21 +53,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/php/vomi.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="33" column="36" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>affichage</find>
       <find>echo</find>
+      <find>vomi.txt</find>
+      <find>txt</find>
+      <find>.txt</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -79,13 +70,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/php/vomi.php" />
         <option value="$PROJECT_DIR$/js/monstre.js" />
         <option value="$PROJECT_DIR$/php/tweet.php" />
         <option value="$PROJECT_DIR$/index1.html" />
         <option value="$PROJECT_DIR$/fichier_qui_sert_a_save _pour_refonte" />
         <option value="$PROJECT_DIR$/js/modal.js" />
         <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/php/vomi.php" />
         <option value="$PROJECT_DIR$/index1.php" />
       </list>
     </option>
@@ -120,11 +111,6 @@
               <item name="tamagotweet" type="b2602c69:ProjectViewProjectNode" />
               <item name="tamagotweet" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tamagotweet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tamagotweet" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tamagotweet" type="b2602c69:ProjectViewProjectNode" />
@@ -169,12 +155,12 @@
       <option name="presentableId" value="Default" />
       <updated>1562245511643</updated>
       <workItem from="1562245512796" duration="2028000" />
-      <workItem from="1562249910021" duration="21574000" />
+      <workItem from="1562249910021" duration="26769000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23602000" />
+    <option name="totallyTimeSpent" value="28797000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="20" width="1600" height="880" extended-state="6" />
@@ -214,13 +200,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fichier_qui_sert_a_save _pour_refonte">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/vomi.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="33" column="36" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="36" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/php/tweet.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -270,10 +249,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/php/vomi.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index1.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="70" selection-start-line="70" selection-end-line="70" />
+        <state relative-caret-position="66">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
         </state>
       </provider>
     </entry>
