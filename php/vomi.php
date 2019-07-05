@@ -1,5 +1,4 @@
 <?php
-
 require_once("TwitterAPIExchange.php");
 $setting =[
     'oauth_access_token' => "1145641431433961472-sOcxN8ZiWGfG2bAvIpmr7yf0kJOLjS",
@@ -32,9 +31,6 @@ foreach ($str as $key => $value) {
     $i--;
 }
 //je lis mon fichier et chaque ligne je le mets dans un tableau puis je tweet le tableau
-
-
-
 $vomiTXT = fopen('vomi.txt', 'r+'); /* ouvre le fichier comptuer.txt en mode r+ et range le dans la variable $compteur */
 
 
@@ -42,7 +38,6 @@ while (!feof($vomiTXT)) /* tant que le pointeur n'est pas a la fin du fichier ()
 {
     $vomi = fgets($vomiTXT); // lis les lignes du fichier()
 //TWITTER LE VOMI $ligne
-
 
     require_once("TwitterAPIExchange.php");
     $settings =[

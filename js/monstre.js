@@ -1,17 +1,7 @@
 
 var myImg = document.getElementById("tweetGo");
-var tweet = document.getElementById("go");
+var tweets = <?php echo json_encode($number); ?>;
 
-
-
-
-function verif(){
-    if(tweet){
-      zoomin();
-    }else{
-      alert('erreur');
-    }
-}
 
 function zoomin(){
 
@@ -19,17 +9,12 @@ function zoomin(){
     var currWidth = myImg.clientWidth;
     var debHeight = 270;
     var debWidth = 270;
-		if(currHeight >= 600){
-
-
-		} else{
-            myImg.style.height = (currHeight + 15) + "px";
-            myImg.style.width = (currWidth + 15) + "px";
-		}
+            myImg.style.height = tweets + "px";
+            myImg.style.width = tweets + "px";
+            alert("akert")
 }
 
 function reinit(){
-
     var currHeight = myImg.clientHeight;
     var currWidth = myImg.clientWidth;
     var debHeight = 270;
