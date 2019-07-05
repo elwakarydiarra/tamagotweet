@@ -16,7 +16,7 @@
     <div>
         <form class="tweet" method="post" action="index1.php" >
             <textarea  name="tweet" rows="5" cols="33"></textarea>
-            <input type="submit" value="duffer" onclick="zoomin()">
+            <input type="submit" id="modalBtn" value="duffer" >
         </form>
 
     </div>
@@ -25,9 +25,27 @@
 
     </div>
 
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modalclose">&times;</span>
+
+            </div>
+            <div class="modal-body">
+                <p>trop de tweet, deconnecte toi !!!!</p>
+
+            </div>
+            <div class="modal-footer">
+
+            </div>
+        </div>
+    </div>
     <?php
-    $nbtweet=0;
-    $taille = 270;
+
     require_once("php/TwitterAPIExchange.php");
     $settings =[
         'oauth_access_token' => "1145641431433961472-sOcxN8ZiWGfG2bAvIpmr7yf0kJOLjS",
@@ -44,50 +62,81 @@
         $twitter ->  buildOauth($url, $requestMethod)
             ->setPostfields($postfields)
             ->performRequest(),true);
+$newnbtweet=file_get_contents("php/comptweet.txt");
 
+    if ($newnbtweet == 5){
+        file_put_contents("php/comptweet.txt",1);
+        file_put_contents("php/newtaille.txt",270);
+    }
+    else{
 
-    file_put_contents("php/newtaille.txt",@file_get_contents("php/newtaille.txt")+40);
-
-    $newtailleLecture = fopen('php/newtaille.txt', 'r+'); /* ouvre le fichier comptuer.txt en mode r+ et range le dans la variable $compteur */
-    $newtaille = fgets($newtailleLecture); // lis les lignes du fichier()
-    fclose($newtailleLecture);
+        file_put_contents("php/comptweet.txt",@file_get_contents("php/comptweet.txt")+1);
+        $nbtweet = fopen('php/comptweet.txt', 'r+');
+        $newnbtweet= fgets($nbtweet); // lis les lignes du fichier()
+        fclose($nbtweet);
+        file_put_contents("php/newtaille.txt",@file_get_contents("php/newtaille.txt")+40);
+        $newtailleLecture = fopen('php/newtaille.txt', 'r+');
+        $newtaille = fgets($newtailleLecture); // lis les lignes du fichier()
+        fclose($newtailleLecture);
+    }
     ?>
 
     <script>
-        var nbtweet = <?php echo json_encode($nbtweet); ?>;
+        var nbtweet = <?php echo json_encode($newnbtweet); ?>;
         console.log (nbtweet);
         var myImg = document.getElementById("tweetGo");
         var newtaille = <?php echo json_encode($newtaille); ?>;
 
-        var currHeight = myImg.clientHeight;
-        var currWidth = myImg.clientWidth;
-        var debHeight = 270;
-        var debWidth = 270;
-        myImg.style.height = (debHeight) + "px";
-        myImg.style.width = (debWidth) + "px";
-        myImg.style.display="flex";
-        myImg.style.justifyContent="center";
         myImg.style.width= newtaille + "px";
         myImg.style.height= newtaille + "px" ;
-        if(nbtweet>4){
+        if(nbtweet==6){
             reinit();
         }
-
 
         function reinit(){
 
             var currHeight = myImg.clientHeight;
             var currWidth = myImg.clientWidth;
-            var debHeight = 150;
-            var debWidth = 100;
+            var debHeight = 270;
+            var debWidth = 270;
             myImg.style.height= (debHeight) + "px"
             myImg.style.width= (debWidth) + "px"
             myImg.style.display="flex";
             myImg.style.justifyContent="center";
-            myImg.style.width= "40px";
-            myImg.style.height= "45px" ;
+            myImg.style.width= "240px";
+            myImg.style.height= "136px" ;
 
 
+        }
+
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("modalBtn");
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("modalclose")[0];
+
+
+
+        // bouton qui permet d'ouvrir le modal aprés n tweets
+        btn.onclick = function() {
+
+            if (nbtweet == 5){
+                modal.style.display = "block";
+            }
+        }
+
+        // bouton qui permet de fermer le modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
         }
     </script>
 </body>
