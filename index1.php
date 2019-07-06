@@ -45,102 +45,42 @@
         </div>
     </div>
     <?php
+require_once("php/tweeter.php");
+tweet("$_POST[tweet]");
 
-    require_once("php/TwitterAPIExchange.php");
-    $settings =[
-        'oauth_access_token' => "1145641431433961472-sOcxN8ZiWGfG2bAvIpmr7yf0kJOLjS",
-        'oauth_access_token_secret' => "zxPAWefsxUFxJmrS3vwtj2C6hAAWdB9vFy9kUM5A2fZY8",
-        'consumer_key' => "HRDNlYLaVOSBc5y1BEQU7n0gY",
-        'consumer_secret' => "APXkrk69tt3NVxtWGXHwOYawhYT9SVm7d5xJq3Ht3NfSwfX8t6"
-    ];
-
-    $url = "https://api.twitter.com/1.1/statuses/update.json";
-    $requestMethod = "POST";
-    $postfields = ["status"=> "$_POST[tweet]"];
-    $twitter = new TwitterAPIExchange($settings);
-    $response = json_encode(
-        $twitter ->  buildOauth($url, $requestMethod)
-            ->setPostfields($postfields)
-            ->performRequest(),true);
 $newnbtweet=file_get_contents("php/comptweet.txt");
 
-    $i=5;
+
     if ($newnbtweet == 8){
-        file_put_contents("php/comptweet.txt",1);
-        file_put_contents("php/newtaille.txt",270);
+        require_once("php/reinit_files.php");
+        reinit(0,230);
     }
     else if ($newnbtweet == 7){
+        require_once("php/recup_tweet.php");
+        recupTweet("wakary11",5);
 
-        require_once("php/TwitterAPIExchange.php");
-        $setting =[
-            'oauth_access_token' => "1145641431433961472-sOcxN8ZiWGfG2bAvIpmr7yf0kJOLjS",
-            'oauth_access_token_secret' => "zxPAWefsxUFxJmrS3vwtj2C6hAAWdB9vFy9kUM5A2fZY8",
-            'consumer_key' => "HRDNlYLaVOSBc5y1BEQU7n0gY",
-            'consumer_secret' => "APXkrk69tt3NVxtWGXHwOYawhYT9SVm7d5xJq3Ht3NfSwfX8t6"
-        ];
-
-
-        $url = "https://api.twitter.com/1.1/statuses/user_timeline.json";
-        $requestMethod = "GET";
-        $getfield = "?screen_name=wakary11&count=5";
-        $twitter = new TwitterAPIExchange($setting);
-        $str = json_decode(
-            $twitter->setGetfield($getfield)
-                ->buildOauth($url, $requestMethod)
-                ->performRequest(),
-            true);
-
-
-        foreach ($str as $key => $value) {
-            $compteur = fopen('php/vomi.txt', 'a+'); // on ouvre le fichier
-            $tweet = $str[$key]["text"];
-
-            $word = explode(" ", $tweet);//On explose notre string en prenant comme delimiter l'espace et ça nous sort un tableau
-
-            $words = $word[$i] . " "; /* On écrit le contenu que l'on veut (\r\n c'est CRLF) ecrire a la fin */
-            fputs($compteur, $words); // fonction permet l'ecriture
-            fclose($compteur);// on ferme le fichier
-            $i--;
-        }
-//je lis mon fichier et chaque ligne je le mets dans un tableau puis je tweet le tableau
         $vomiTXT = fopen('php/vomi.txt', 'r+'); /* ouvre le fichier comptuer.txt en mode r+ et range le dans la variable $compteur */
-
 
         while (!feof($vomiTXT)) /* tant que le pointeur n'est pas a la fin du fichier () */
         {
             $vomi = fgets($vomiTXT); // lis les lignes du fichier()
-//TWITTER LE VOMI $ligne
-
-            require_once("php/TwitterAPIExchange.php");
-            $settings =[
-                'oauth_access_token' => "1145641431433961472-sOcxN8ZiWGfG2bAvIpmr7yf0kJOLjS",
-                'oauth_access_token_secret' => "zxPAWefsxUFxJmrS3vwtj2C6hAAWdB9vFy9kUM5A2fZY8",
-                'consumer_key' => "HRDNlYLaVOSBc5y1BEQU7n0gY",
-                'consumer_secret' => "APXkrk69tt3NVxtWGXHwOYawhYT9SVm7d5xJq3Ht3NfSwfX8t6"
-            ];
-
-            $url = "https://api.twitter.com/1.1/statuses/update.json";
-            $requestMethod = "POST";
-            $postfields = ["status"=> "$vomi"];
-            $twitter = new TwitterAPIExchange($settings);
-            $twitter->buildOauth($url, $requestMethod)
-                ->setPostfields($postfields)
-                ->performRequest();
-
+            require_once("php/tweeter.php");
+            tweet("$vomi");
         }
 
         ftruncate($vomiTXT,0); // efface le contenu du fichier apres avoir tweeter le vomi afin de repartir sur un fichier vide pour le prochain vomi
-        fclose($vomiTXT); // ferme la variable $compteur qui est défini au début
+        fclose($vomiTXT);
 
-        file_put_contents("php/comptweet.txt",1);
-        file_put_contents("php/newtaille.txt",270);
+        require_once("php/reinit_files.php");
+        reinit(0,230);
     }
     else{
-        file_put_contents("php/comptweet.txt",@file_get_contents("php/comptweet.txt")+1);
+        file_put_contents("php/comptweet.txt",@file_get_contents("php/comptweet.txt")+1);//je put dans le fichier php/comptweet.txt le contenu de php/comptweet.txt (je lis le fichier avec file_get_contents) incementer de 1
         $nbtweet = fopen('php/comptweet.txt', 'r+');
         $newnbtweet= fgets($nbtweet); // lis les lignes du fichier()
         fclose($nbtweet);
-        file_put_contents("php/newtaille.txt",@file_get_contents("php/newtaille.txt")+40);
+
+        file_put_contents("php/newtaille.txt",@file_get_contents("php/newtaille.txt")+40);//pareil qu'avec comptweet.txt sauf que la je l'incremente de 40 a chaque fois
         $newtailleLecture = fopen('php/newtaille.txt', 'r+');
         $newtaille = fgets($newtailleLecture); // lis les lignes du fichier()
         fclose($newtailleLecture);
@@ -148,12 +88,12 @@ $newnbtweet=file_get_contents("php/comptweet.txt");
     ?>
 
     <script>
-        var nbtweet = <?php echo json_encode($newnbtweet); ?>;
-        console.log (nbtweet);
+        // !!!!!!!!!!! POUR RECUP MES VARIABLES PHP EN JS JE SUIS OBLIGÉ D'UTILISER ECHO ET JSON_ENCODE !!!!!!!
+        var nbtweet = <?php echo json_encode($newnbtweet); ?>;// je recup ma variable php $newnbtweet et je le mets dans ma var JS nbtweet
         var myImg = document.getElementById("tweetGo");
-        var newtaille = <?php echo json_encode($newtaille); ?>;
+        var newtaille = <?php echo json_encode($newtaille); ?>; // pareil que nbtweet
 
-        myImg.style.width= newtaille + "px";
+        myImg.style.width= newtaille + "px"; //j'applique ma variable newtaille au style en HTML a myImg
         myImg.style.height= newtaille + "px" ;
         if(nbtweet==8){
             reinit();
@@ -169,8 +109,7 @@ $newnbtweet=file_get_contents("php/comptweet.txt");
             myImg.style.width= (debWidth) + "px"
             myImg.style.display="flex";
             myImg.style.justifyContent="center";
-            myImg.style.width= "240px";
-            myImg.style.height= "136px" ;
+           
 
 
         }
@@ -188,7 +127,7 @@ $newnbtweet=file_get_contents("php/comptweet.txt");
         // bouton qui permet d'ouvrir le modal aprés n tweets
         btn.onclick = function() {
 
-            if (nbtweet == 3){
+            if (nbtweet >= 5){
                 modal.style.display = "block";
             }
         }
