@@ -99,8 +99,8 @@ $newnbtweet=file_get_contents("php/comptweet.txt");
             reinit();
         }
 
-        function reinit(){
 
+        function reinit(){
             var currHeight = myImg.clientHeight;
             var currWidth = myImg.clientWidth;
             var debHeight = 270;
@@ -109,12 +109,8 @@ $newnbtweet=file_get_contents("php/comptweet.txt");
             myImg.style.width= (debWidth) + "px"
             myImg.style.display="flex";
             myImg.style.justifyContent="center";
-           
-
-
         }
 
-        // Get the modal
         var modal = document.getElementById("myModal");
 
         // Get the button that opens the modal
