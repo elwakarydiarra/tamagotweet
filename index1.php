@@ -7,16 +7,27 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>TamagoTweet</title>
 </head>
+<<<<<<< HEAD
   <body>
     <div class="container">
       <div class="header">
         <h1 class="header-title">Tamagotweet</h1>
       </div>
       <div>
+=======
+<body>
+<div class="container">
+    <div class="header">
+        <h1 class="header-title">Tamagotweet</h1>
+    </div>
+
+    <div>
+>>>>>>> a05689fede1cfc0f000a5201bb76c0e7d26c5665
         <form class="tweet" method="post" action="index1.php" >
             <textarea  name="tweet" rows="5" cols="33"></textarea>
             <input type="submit" id="modalBtn" value="duffer" >
         </form>
+<<<<<<< HEAD
       </div>
       <div class="image">
         <img  src="img/homer.gif" id="tweetGo">
@@ -132,5 +143,41 @@ $newnbtweet=file_get_contents("php/comptweet.txt");
             }
         }
     </script>
+=======
+
+    </div>
+    <div class="image">
+        <img  src="img/homer.gif" id="tweetGo">
+
+    </div>
+
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modalclose">&times;</span>
+
+            </div>
+            <div class="modal-body">
+                <p>trop de tweet, deconnecte toi !!!!</p>
+
+            </div>
+            <div class="modal-footer">
+
+            </div>
+        </div>
+    </div>
+    <?php
+    require_once("php/all.php");
+    ?>
+    <script>
+        var nbtweet = <?php echo json_encode($newnbtweet); ?>;// je recup ma variable php $newnbtweet et je le mets dans ma var JS nbtweet
+        var newtaille = <?php echo json_encode($newtaille); ?>; // pareil que nbtweet
+    </script>
+    <script src="js/zoom_modal.js"></script>
+>>>>>>> a05689fede1cfc0f000a5201bb76c0e7d26c5665
 </body>
 </html>
