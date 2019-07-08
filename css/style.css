@@ -1,0 +1,154 @@
+body{
+  /*background-color: #70D1FF;*/
+  background-image: url('../img/fond.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Gochi Hand', cursive;
+}
+
+
+.header{
+    background-image:url('../img/donuts.png');
+    background-repeat: no-repeat;
+    display:flex;
+    justify-content: flex-start;
+    width:300px;
+    height:150px;
+
+
+}
+
+.header-title{
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  font-size:50px;
+
+}
+
+.head-form{
+  display:flex;
+  justify-content: flex-end;
+
+
+}
+
+.container{
+  /*border:1px solid black;*/
+/*  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+  width:50%;
+  height:100%;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+  margin-left: auto;
+  margin-right: auto;
+/*  background-color: rgba(23,145,255,0);*/
+
+}
+
+textarea {
+    padding: 10px;
+    line-height: 1;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+    background-color: #FFD90F;
+    font-family: 'Gochi Hand', cursive;
+    font-size:20px;
+    display:flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+}
+
+input{
+    width: 120px;
+    height: 40px;
+    border-radius:25px;
+    margin-left: 35px;
+    background-color: #EC050C;
+    font-family: 'Gochi Hand', cursive;
+    font-size: 30px;
+    outline:0;
+
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 40%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0.5}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0.5}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.modalclose {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.modalclose:hover,
+.modalclose:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #87CEEB;
+    height: 70px;
+}
+
+.modal-body {
+    padding: 2px 16px;
+    text-align: center;
+    font: italic 1.2em "Fira Sans", serif;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #87CEEB;
+    height: 70px;
+}
