@@ -66,19 +66,32 @@ textarea {
     justify-content: flex-end;
 
 }
-/*bouton tweet......................*/
+
+input{
+    width: 120px;
+    height: 40px;
+    border-radius:25px;
+    margin-left: 35px;
+    background-color: #EC050C;
+    font-family: 'Gochi Hand', cursive;
+    font-size: 30px;
+    outline:0;
+
+}
+
+/* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 /* Modal Content */
@@ -117,25 +130,25 @@ textarea {
 
 .modalclose:hover,
 .modalclose:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .modal-header {
-  padding: 2px 16px;
-  background-color: #87CEEB;
-  height: 70px;
+    padding: 2px 16px;
+    background-color: #87CEEB;
+    height: 70px;
 }
 
 .modal-body {
-  padding: 2px 16px;
-  text-align: center;
-  font: italic 1.2em "Fira Sans", serif;
+    padding: 2px 16px;
+    text-align: center;
+    font: italic 1.2em "Fira Sans", serif;
 }
 
 .modal-footer {
-  padding: 2px 16px;
-  background-color: #87CEEB;
-  height: 70px;
+    padding: 2px 16px;
+    background-color: #87CEEB;
+    height: 70px;
 }
