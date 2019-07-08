@@ -31,7 +31,7 @@ var span = document.getElementsByClassName("modalclose")[0];
 // bouton qui permet d'ouvrir le modal aprés n tweets
 btn.onclick = function() {
 
-    if (nbtweet == variable){
+    if (nbtweet == 7){
         modal.style.display = "block";
     }
 }
