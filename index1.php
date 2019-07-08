@@ -45,12 +45,15 @@
         </div>
     </div>
     <?php
-    require_once("php/all.php");
+    require("php/all.php");
     ?>
     <script>
         var nbtweet = <?php echo json_encode($newnbtweet); ?>;// je recup ma variable php $newnbtweet et je le mets dans ma var JS nbtweet
         var newtaille = <?php echo json_encode($newtaille); ?>; // pareil que nbtweet
+        var variable = <?php echo json_encode($variable); ?>;
     </script>
-    <script src="js/zoom_modal.js"></script>
+    <script src="js/zoom_modal.js">
+
+    </script>
 </body>
 </html>
