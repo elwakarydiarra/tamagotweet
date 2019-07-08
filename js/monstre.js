@@ -42,7 +42,7 @@ var compteur = 0;
 
 // Get the button that opens the modal
 var btn = document.getElementById("modalBtn");
-//var affiche = document.getElementById("affichage");
+var affiche = document.getElementById("affichage");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("modalclose")[0];
 
