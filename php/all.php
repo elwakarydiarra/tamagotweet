@@ -1,16 +1,16 @@
 <?php
 
-require_once("php/tweeter.php");
+require("php/tweeter.php");
 tweet("$_POST[tweet]");
 
 $newnbtweet=file_get_contents("php/comptweet.txt");
+$variable = 5;
 
-
-if ($newnbtweet == 8){
+if ($newnbtweet == ($variable+3)){
     require_once("php/reinit_files.php");
     reinit(0,230);
 }
-else if ($newnbtweet == 7){
+else if ($newnbtweet == ($variable+2)){
     require_once("php/recup_tweet.php");
     recupTweet("wakary11",5);
 
