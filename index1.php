@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/NEWstyle.css">
     <title>TamagoTweet</title>
 </head>
 <body>
@@ -50,7 +50,6 @@
     <script>
         var nbtweet = <?php echo json_encode($newnbtweet); ?>;// je recup ma variable php $newnbtweet et je le mets dans ma var JS nbtweet
         var newtaille = <?php echo json_encode($newtaille); ?>; // pareil que nbtweet
-        var variable = <?php echo json_encode($variable); ?>;
     </script>
     <script src="js/zoom_modal.js">
 

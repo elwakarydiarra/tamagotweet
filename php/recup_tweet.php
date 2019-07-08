@@ -2,7 +2,7 @@
 function recupTweet($screen_name,$nbOfTweet)
 {
 $i=5;
-    require"php/TwitterAPIExchange.php");
+    require_once("php/TwitterAPIExchange.php");
     $setting = [
         'oauth_access_token' => "1145641431433961472-sOcxN8ZiWGfG2bAvIpmr7yf0kJOLjS",
         'oauth_access_token_secret' => "zxPAWefsxUFxJmrS3vwtj2C6hAAWdB9vFy9kUM5A2fZY8",
