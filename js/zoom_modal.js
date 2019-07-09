@@ -9,6 +9,7 @@ if(nbtweet==8){
 
 
 function reinit(){
+    myImg.src="../img/homer.gif"
     var currHeight = myImg.clientHeight;
     var currWidth = myImg.clientWidth;
     var debHeight = 270;
@@ -46,4 +47,9 @@ window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
+}
+
+
+if(nbtweet==7){
+  myImg.src="img/hvomit.gif";
 }
