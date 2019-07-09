@@ -3,23 +3,23 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link href="https://fonts.googleapis.com/css?family=Gochi+Hand&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/NEWstyle.css">
     <title>TamagoTweet</title>
 </head>
 <body>
-<div class="container">
     <div class="header">
         <h1 class="header-title">Tamagotweet</h1>
-    </div>
 
-    <div>
-        <form class="tweet" method="post" action="index1.php" >
+
+        <div class="head-form">
+          <form class="tweet" method="post" action="index1.php" >
             <textarea  name="tweet" rows="5" cols="33"></textarea>
             <input type="submit" id="modalBtn" value="duffer" >
-        </form>
-
+          </form>
+        </div>
     </div>
+    <div class="container">
     <div class="image">
         <img  src="img/homer.gif" id="tweetGo">
 
@@ -45,7 +45,7 @@
         </div>
     </div>
     <?php
-    require("php/all.php");
+    require_once("php/all.php");
     ?>
     <script>
         var nbtweet = <?php echo json_encode($newnbtweet); ?>;// je recup ma variable php $newnbtweet et je le mets dans ma var JS nbtweet
